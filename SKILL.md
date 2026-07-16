@@ -101,9 +101,9 @@ HR报告先展示分流与人工复核、硬条件、企业侧能力证据，然
 
 - AstronClaw / Astron SkillHub：参赛目标环境；ZIP离线结构检查已提供，上传、安装和调用仍需按验收清单在真实平台完成并保留证据。
 - Windows、macOS、Linux终端和CI：调用 `scripts/interfaces/cli/talentlens.py`。
-- Claude Code、Codex、Gemini CLI及其他能执行本地命令的助手：读取本文件并调用CLI。
-- Dify、Coze、n8n、Flowise和自建后端：启动 `scripts/interfaces/http/http_server.py`，调用 `/match`、`/rank-candidates`、`/rank-jobs` 和 `/health`。
-- LangChain、LlamaIndex、桌面应用和编辑器插件：使用HTTP，或把 `scripts/interfaces/stdio/json_stdio.py` 作为长期子进程。
+- 能读取技能说明并执行本地命令的助手或编辑工具：读取本文件并调用CLI。
+- 支持HTTP的工作流编排平台、内部业务系统和自建后端：启动 `scripts/interfaces/http/http_server.py`，调用 `/match`、`/rank-candidates`、`/rank-jobs` 和 `/health`。
+- 桌面应用、编辑器扩展和需要长期进程的集成程序：使用HTTP，或把 `scripts/interfaces/stdio/json_stdio.py` 作为长期子进程。
 
 HTTP默认只监听回环地址，请求上限2MB。对外部署时应在外层配置HTTPS、身份认证、授权、限流、日志脱敏和审计。
 

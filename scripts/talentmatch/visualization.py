@@ -71,14 +71,14 @@ def _stacked_bar(title: str, subtitle: str, segments: Sequence[Tuple[str, float,
     width, height = 980, 260
     total = sum(max(0.0, float(value)) for _, value, _ in segments) or 1.0
     x, y, bar_width = 40, 118, 880
-    cursor = x
+    current_x = x
     parts = []
     for label, value, color in segments:
         segment_width = bar_width * max(0.0, float(value)) / total
-        parts.append(f'<rect x="{cursor:.1f}" y="{y}" width="{segment_width:.1f}" height="38" fill="{COLORS[color]}"/>')
+        parts.append(f'<rect x="{current_x:.1f}" y="{y}" width="{segment_width:.1f}" height="38" fill="{COLORS[color]}"/>')
         if segment_width >= 74:
-            parts.append(f'<text x="{cursor + segment_width / 2:.1f}" y="{y + 24}" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">{_escape(label)} {value:.0f}</text>')
-        cursor += segment_width
+            parts.append(f'<text x="{current_x + segment_width / 2:.1f}" y="{y + 24}" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">{_escape(label)} {value:.0f}</text>')
+        current_x += segment_width
     legend_x = 40
     for label, value, color in segments:
         parts.append(f'<rect x="{legend_x}" y="188" width="14" height="14" rx="3" fill="{COLORS[color]}"/>')

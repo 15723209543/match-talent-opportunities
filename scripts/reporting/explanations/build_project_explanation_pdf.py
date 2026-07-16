@@ -391,8 +391,8 @@ def build_story(styles, font_name: str, bold_name: str):
         styled_table([
             ["调用方式", "适用环境", "入口"],
             ["CLI", "Windows、macOS、Linux、服务器、CI", p("scripts/interfaces/cli/<br/>talentlens.py", styles["small"])],
-            ["NDJSON标准输入", "Claude Code、Codex、Gemini CLI、编辑器代理", p("scripts/interfaces/stdio/<br/>json_stdio.py", styles["small"])],
-            ["本地HTTP", p("Dify、Coze、n8n、Flowise、<br/>LangChain、LlamaIndex", styles["small"]), p("scripts/interfaces/http/<br/>http_server.py", styles["small"])],
+            ["NDJSON标准输入", "桌面应用、编辑器扩展、长期运行的集成程序", p("scripts/interfaces/stdio/<br/>json_stdio.py", styles["small"])],
+            ["本地HTTP", p("工作流编排平台、内部业务系统、<br/>自建后端与受控服务", styles["small"]), p("scripts/interfaces/http/<br/>http_server.py", styles["small"])],
             ["AstronClaw", "SkillHub发布、平台安装与调用", "ZIP根目录SKILL.md"],
             ["角色封装", "HR、求职者、面试官、人才发展工作流", "scripts对应角色目录"],
         ], [31 * mm, 74 * mm, 69 * mm], styles, font_name=font_name, bold_name=bold_name),
