@@ -1,0 +1,5 @@
+interface:
+  display_name: "TalentLens 双向人岗匹配"
+  short_description: "基于证据与可配置指标，生成可复核的双向人岗匹配报告"
+  brand_color: "#9B2438"
+  default_prompt: "使用 $match-talent-opportunities 读取候选人和岗位资料，按我的HR、求职者、面试官或人才发展管理者身份，生成证据充分度清晰、可人工复核的双向匹配报告。"
